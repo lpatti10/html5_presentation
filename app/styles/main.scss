@@ -2,25 +2,72 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+// $small-screen: em(500); 
+
 // Custom Styles
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  font-size: 2.5em;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+  background: #666;
+  section {
+    position: absolute;
+    padding: 36px;
+    box-sizing: border-box;
+    visibility: hidden;
+    h1 {  
+      font-size: 2.25em;
+      margin-bottom:-0.25em;
+    }
+    h2 {
+      font-size: 1.25em;
+    }
+    img {
+      // @include media($small-screen) {
+      //   float: none;
+      // }
+      width: 40%;
+      float: right;
+      margin-top: 1.25em;
+    }
+    p {
+      float: left;
+      width: 50%;
+    }
+  }
+  .active {
+    visibility: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .titleSlide, .endSlide {
+    padding-top: 25%;
+    background: url(../images/unsplash_road.jpeg) left bottom repeat-x;
+    // img {
+    //   max-width: 100%;
+    // }
   }
 }
+
+@media all and (max-width: 1000px) {
+  body {
+    font-size: 1.5em;
+    
+  }
+
+}
+
+// @media all and (max-width: 799px) {
+//   section p, section img {
+//     width: 100%;
+//   }
+//   section {
+//     padding: 0 16px;
+//   }
+// }
